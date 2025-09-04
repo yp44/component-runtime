@@ -1,29 +1,42 @@
-= Component Runtime
+= Talend Component Kit
 :gh-name: Talend/component-runtime
 :gh-branch: master
 :openhub-name: component-runtime
-
 
 image:https://img.shields.io/maven-central/v/org.talend.sdk.component/component-runtime?versionPrefix=1.&logo=apachemaven&color=red[Maven Central Version]
 image:https://img.shields.io/badge/component_runtime-blue?label=doc["doc", link="https://talend.github.io/component-runtime/main/latest/index.html"]
 image:https://img.shields.io/badge/changelog-blue["changelog", link="https://talend.github.io/component-runtime/main/latest/changelog.html"]
 image:https://img.shields.io/badge/OpenAPI-green?label=.&logo=openapiinitiative["openapi", link="https://talend.github.io/component-runtime/main/latest/rest-openapi.html"]
-
 image:https://www.openhub.net/p/{openhub-name}/widgets/project_thin_badge?format=gif&ref=Thin+badge["OpenHub", link="https://www.openhub.net/p/{openhub-name}"]
 
-Talend Component Kit is a framework designed to help Talend components creation for both Talend Studio and Cloud
-applications.
-This framework unifies the way components are built to ensure they are standardized and easy to deploy in different
-environments, as well as 'upgrade-compliant' as Talend applications are getting updated on a regular basis.
+Talend Component Kit is a framework designed to help Talend components creation for both Talend Studio and Cloud applications.
+This framework unifies the way components are built to ensure they are standardized and easy to deploy in different environments, as well as 'upgrade-compliant' as Talend applications are getting updated on a regular basis.
+
+The Talend Component Kit provides a set of APIs, tools, and runtime implementations to build, test, and integrate components seamlessly.
+
+== Modules
+
+This project is composed of several modules. Here are some of the most important ones:
+
+* `component-api`: Defines the public API for component development. It contains the annotations and interfaces that you will use to build your components.
+* `component-spi`: Defines the Service Provider Interface (SPI) for the component runtime. It allows for different implementations of the runtime to be plugged in.
+* `component-runtime-impl`: The default implementation of the component runtime. It is responsible for discovering, loading, and executing components.
+* `component-runtime-manager`: Provides services to manage components, including deployment, lifecycle, and metadata extraction.
+* `component-runtime-beam`: Provides a runner for Beam components, allowing them to be executed on Apache Beam.
+* `component-server-parent`: The parent for all modules related to the component server, which is a standalone application that exposes component metadata and services over HTTP.
+* `talend-component-maven-plugin`: A Maven plugin to package and validate components.
+* `component-starter-server`: A starter project to quickly create a new component project.
+* `documentation`: Contains the source for the official documentation.
+
+== Getting Started
 
 Start developing components by generating a project from the https://starter-toolkit.talend.io/[Component Kit Starter]
 or by downloading the Component Kit https://plugins.jetbrains.com/plugin/10558-talend-component-kit[IntelliJ plugin].
 
+The full documentation is available https://talend.github.io/component-runtime/main/latest/index.html[here].
 
-
-NOTE:
+== Build
 
 * Maven 3.5 or later is required to build this project.
-* the build relies on Node.JS and npm
-* the build uses `frontend-maven-plugin` to setup your environment.
-
+* The build relies on Node.JS and npm.
+* The build uses `frontend-maven-plugin` to setup your environment.
