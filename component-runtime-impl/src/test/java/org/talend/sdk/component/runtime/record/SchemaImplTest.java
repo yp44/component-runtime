@@ -81,6 +81,7 @@ class SchemaImplTest {
             .build();
 
     @Test
+    @org.junit.jupiter.api.Disabled("https://github.com/jqno/equalsverifier/issues/558")
     void checkEquals() {
         final RecordBuilderFactory f = new RecordBuilderFactoryImpl("test");
         final Entry first = f.newEntryBuilder().withName("First").withType(Type.STRING).build();
